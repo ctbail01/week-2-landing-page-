@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Charity:Water Landing Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f6f6f6;
+    }
+
+    header {
+      background: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav img {
+      height: 40px;
+    }
+
+    .nav-donate {
+      background-color: #f4a300;
+      color: white;
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #ffd100;
+      padding: 4rem 2rem;
+    }
+
+    .hero-left {
+      flex: 1 1 300px;
+      padding-right: 2rem;
+    }
+
+    .hero-left h1 {
+      font-size: 3rem;
+      color: white;
+      font-weight: bold;
+      margin: 0 0 1rem;
+    }
+
+    .hero-left p {
+      font-size: 1.1rem;
+      color: white;
+      margin-bottom: 2rem;
+    }
+
+    .cta {
+      display: flex;
+      align-items: center;
+    }
+
+    .cta input {
+      padding: 0.8rem;
+      border: none;
+      border-radius: 5px 0 0 5px;
+      font-size: 1rem;
+      color: #999;
+    }
+
+    .cta button {
+      background-color: #f4a300;
+      border: none;
+      color: white;
+      padding: 0.8rem 1rem;
+      font-weight: bold;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+    }
+
+    .hero-right {
+      flex: 1 1 300px;
+      position: relative;
+      margin-top: 1rem;
+    }
+
+    .hero-right img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .caption {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      position: absolute;
+    }
+
+    .caption-top {
+      top: 10%;
+      left: 5%;
+    }
+
+    .caption-bottom {
+      bottom: 10%;
+      right: 5%;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        padding: 2rem 1rem;
+      }
+
+      .hero-left h1 {
+        font-size: 2.5rem;
+      }
+
+      .cta {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .cta input, .cta button {
+        border-radius: 5px;
+        margin-bottom: 0.5rem;
+        width: 100%;
+      }
+
+      .caption {
+        position: static;
+        margin-top: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav">
+      <img src=data:image/jpeg;base64,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
+alt="Charity Water Logo">
+    </div>
+    <button class="nav-donate">Donate</button>
+  </header>
+
+  <section class="hero">
+    <div class="hero-left">
+      <h1>Be the change. <br> Start with water</h1>
+      <p>You’re in college. You’re busy, but you still care</p>
+      <div class="cta">
+        <input type="text" placeholder="Water changes everything" disabled>
+        <button>DONATE</button>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <img src=https://d35lvrk9fb4ftj.cloudfront.net/eyJidWNrZXQiOiJkcm9wbWFyayIsImtleSI6IjUyMDQzL2EwZWU2ZGE2ZDZjMGIxNDQwMGY4YzgwNjE4YWViYjYyNjVmZjY5MDhiZDA1NjJlODgxYWRjYjU0MjBhZjIzMGUvcHJldmlldy9jaGFyaXR5X3dhdGVyX1RhbnphbmlhX1RhcmFTaHVwZVBob3RvZ3JhcGh5XzAwNzQuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo2MDAsImhlaWdodCI6NjAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=
+alt="Child with Water">
+      <div class="caption caption-top">Every $1 we raise helps bring some clean water</div>
+      <div class="caption caption-bottom">Real students. Real IMPACT</div>
+    </div>
+  </section>
+
+</body>
+</html>
